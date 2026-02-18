@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+const init = () => {
     console.log('Krumme Klänge Landing Page Loaded');
 
     const revealElements = document.querySelectorAll('.card, .section-title, .studio-content, .info-strip');
@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.classList.add('active');
                 element.style.opacity = '1';
                 element.style.transform = 'translateY(0)';
-            } else {
-                // Optional: remove class to re-animate on scroll up
-                // element.classList.remove('active'); 
             }
         });
     };
@@ -28,31 +25,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('scroll', revealOnScroll);
-    // Trigger once on load
     revealOnScroll();
 
-    // Smooth scroll for anchor links (if not supported natively)
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-    // Toggle details functionality
-    const toggleBtns = document.querySelectorAll('.toggle-btn');
-
-    toggleBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const details = btn.nextElementSibling;
-            details.classList.toggle('open');
-
-            if (details.classList.contains('open')) {
-                btn.textContent = 'Weniger anzeigen';
-            } else {
-                btn.textContent = 'Mehr erfahren';
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
-});
+
+    // Toggle details functionality - EVENT DELEGATION FOR ROBUSTNESS
+    document.body.addEventListener('click', (e) => {
+        if (e.target.matches('.toggle-btn')) {
+            const btn = e.target;
+            const details = btn.nextElementSibling;
+            if (details && details.classList.contains('toggle-details')) {
+                details.classList.toggle('open');
+                if (details.classList.contains('open')) {
+                    btn.textContent = 'Weniger anzeigen';
+                } else {
+                    btn.textContent = 'Mehr erfahren';
+                }
+            }
+        }
+    });
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}

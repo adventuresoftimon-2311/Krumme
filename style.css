@@ -118,37 +118,58 @@ h2.section-title {
 }
 
 /* Buttons on Hero */
+/* Buttons on Hero & General */
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
     font-size: 1.2rem;
     font-weight: 700;
     color: #fff;
-    background-color: var(--color-primary);
+    background-color: #8a2c22;
     text-decoration: none;
     border-radius: 2px;
     transition: all 0.3s ease;
-    border: 2px solid var(--color-primary);
+    border: 2px solid #8a2c22;
+    cursor: pointer;
 }
 
 .cta-button:hover {
-    background-color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
+    background-color: #a63e2e;
+    border-color: #a63e2e;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #fff;
 }
 
 .cta-button.outline {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
-    color: #fff;
-    backdrop-filter: blur(5px);
+    background-color: transparent;
+    border-color: #8a2c22;
+    color: #8a2c22;
 }
 
 .cta-button.outline:hover {
-    background-color: #fff;
-    color: var(--color-primary);
-    border-color: #fff;
+    background-color: #8a2c22;
+    color: #fff;
+}
+
+/* ... existing scroll indicator ... */
+
+/* ... */
+
+.cta-button.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    background-color: #8a2c22;
+    /* specific request */
+    border: 2px solid #8a2c22;
+    color: #fff;
+}
+
+.cta-button.small:hover {
+    background-color: #a63e2e;
+    border-color: #a63e2e;
+    color: #fff;
 }
 
 .scroll-indicator {
@@ -344,13 +365,14 @@ h2.section-title {
     font-size: 0.9rem;
     margin-top: 1rem;
     cursor: pointer;
-    background: transparent;
-    border: 2px solid var(--color-text);
-    color: var(--color-text);
+    background-color: #8a2c22;
+    border: 2px solid #8a2c22;
+    color: #fff;
 }
 
 .cta-button.small:hover {
-    background: var(--color-text);
+    background-color: #a63e2e;
+    border-color: #a63e2e;
     color: #fff;
 }
 
