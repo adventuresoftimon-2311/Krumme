@@ -636,6 +636,7 @@ footer {
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     /* Dramatic Triangle Shape: Left full height, Right 60% height (Increased to avoid cutting off Nav) */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
 }
 
@@ -650,6 +651,7 @@ footer {
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
     /* Remove Triangle Effect (become rectangle) */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
