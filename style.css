@@ -946,6 +946,11 @@ footer {
         font-size: 3rem;
     }
 
+    .footer-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
     .section-title {
         font-size: 2rem;
     }
