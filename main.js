@@ -53,22 +53,16 @@ const init = () => {
             }
         }
     });
-    // Sticky Header Scroll Effect using IntersectionObserver (More robust)
+    // Sticky Header Scroll Effect (Standard)
     const header = document.querySelector('.sticky-header');
-    const sentinel = document.querySelector('#header-sentinel');
-
-    if (header && sentinel) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-        }, { threshold: 0 }); // Fire as soon as sentinel leaves/enters
-
-        observer.observe(sentinel);
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
     }
 };
 
