@@ -265,7 +265,7 @@ h2.section-title {
 }
 
 .highlight {
-    color: #fff;
+    color: var(--color-text);
     border-left: 2px solid var(--color-primary);
     padding-left: 1rem;
 }
