@@ -57,7 +57,7 @@ const init = () => {
     const header = document.querySelector('.sticky-header');
     if (header) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+            if (window.scrollY > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
