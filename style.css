@@ -426,11 +426,20 @@ h2.section-title {
     /* Dark brown to match footer/strip */
     color: #eaddcf;
     text-align: center;
+    padding: 3rem 0;
+    /* Reduced padding */
 }
 
 .booking-block .section-title {
     color: #eaddcf;
     border-bottom-color: #eaddcf;
+    margin-bottom: 1.5rem;
+    /* Reduced margin */
+}
+
+.booking-block .intro-text {
+    color: #eaddcf;
+    margin-bottom: 1rem !important;
 }
 
 .booking-block .cta-button {
