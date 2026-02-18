@@ -635,8 +635,8 @@ footer {
     box-shadow: none;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-    /* Dramatic Triangle Shape: Left full height, Right 40% height */
-    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
+    /* Dramatic Triangle Shape: Left full height, Right 60% height (Increased to avoid cutting off Nav) */
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
 }
 
 .sticky-header.scrolled {
