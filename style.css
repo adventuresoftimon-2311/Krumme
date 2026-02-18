@@ -289,6 +289,12 @@ h2.section-title {
     background: var(--color-bg);
 }
 
+.schule-block .section-title {
+    display: table;
+    margin: 0 auto 3rem auto;
+    /* Center title (with border fitting text) */
+}
+
 .intro-text {
     max-width: 800px;
     margin: 0 auto 3rem auto;
