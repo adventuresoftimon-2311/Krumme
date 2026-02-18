@@ -538,10 +538,19 @@ footer {
 }
 
 .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
     margin-bottom: 2rem;
+}
+
+.footer-col-logo {
+    flex-shrink: 0;
+}
+
+.footer-col-links {
+    margin-left: auto;
+    /* Push LINKS to right side */
 }
 
 .footer-col h4 {
