@@ -633,7 +633,10 @@ footer {
     z-index: 1000;
     border-bottom: none;
     box-shadow: none;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.4s ease, padding 0.4s ease;
+    will-change: height, padding;
+    transform: translateZ(0);
+    /* Force Hardware Acceleration */
 
     /* Dramatic Triangle Shape: Left full height, Right 60% height (Increased to avoid cutting off Nav) */
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%) !important;
