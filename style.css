@@ -148,10 +148,11 @@ h2.section-title {
     color: #8a2c22;
 }
 
-.cta-button.outline:hover {
-    background-color: transparent;
-    color: #8a2c22;
-    border-color: #8a2c22;
+.cta-button.outline:hover,
+.cta-button.outline.small:hover {
+    background-color: transparent !important;
+    color: #8a2c22 !important;
+    border-color: #8a2c22 !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
 }
