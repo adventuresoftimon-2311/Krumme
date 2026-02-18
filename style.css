@@ -283,6 +283,37 @@ h4,
     color: #fff;
 }
 
+.toggle-details {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+    animation: fadeIn 0.5s ease;
+}
+
+.toggle-details.open {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-button.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
 .full-width {
     grid-column: 1 / -1;
 }

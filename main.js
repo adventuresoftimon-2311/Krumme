@@ -40,4 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+    // Toggle details functionality
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const details = btn.nextElementSibling;
+            details.classList.toggle('open');
+
+            if (details.classList.contains('open')) {
+                btn.textContent = 'Weniger anzeigen';
+            } else {
+                btn.textContent = 'Mehr erfahren';
+            }
+        });
+    });
 });
