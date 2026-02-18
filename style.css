@@ -621,30 +621,30 @@ footer {
     top: 0;
     left: 0;
     width: 100%;
-    height: 140px;
-    /* Initial large height */
-    padding: 0.5rem 2rem;
+    height: 180px;
+    /* Much taller initially for dramatic effect */
+    padding: 30px 2rem 0 2rem;
+    /* Align top with padding */
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    /* Crucial: Align top so content isn't clipped by triangle */
     background: #f4f1ea;
-    /* Solid beige initially */
     z-index: 1000;
     border-bottom: none;
-    /* Removed border in favor of clip-path */
     box-shadow: none;
-    /* Removed shadow initially */
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-    /* Triangle Shape Effect */
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    /* Dramatic Triangle Shape: Left full height, Right 40% height */
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
 }
 
 .sticky-header.scrolled {
-    height: 80px;
-    /* Compact height on scroll */
+    height: 90px;
+    /* Compact height */
+    padding: 20px 2rem 0 2rem;
+    /* Adjusted padding for centering */
     background: rgba(244, 241, 234, 0.98);
-    /* Slightly transparent on scroll */
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -660,38 +660,38 @@ footer {
 }
 
 .header-logo {
-    height: 110px;
-    /* Large logo initially */
+    height: 140px;
+    /* Very large logo initially */
     width: auto;
     object-fit: contain;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    transform-origin: left center;
+    transform-origin: top left;
+    /* Scale from top left */
+    margin-top: -10px;
+    /* Pull up slightly if needed */
 }
 
+/* Scrolled state for logo */
 .sticky-header.scrolled .header-logo {
     height: 50px;
-    /* Small logo on scroll */
+    margin-top: 0;
+    transform: translateY(0);
 }
 
-.sticky-header .logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-text);
-    letter-spacing: 1px;
+/* Nav positioning adjustment */
+.sticky-header nav {
+    margin-top: 10px;
+    /* Align visually with logo text center roughly */
+    transition: all 0.4s ease;
 }
 
-.sticky-header .logo-link {
-    display: flex;
-    align-items: center;
+.sticky-header.scrolled nav {
+    margin-top: 5px;
 }
 
-.header-logo {
-    height: 50px;
-    /* Fitting size for sticky header */
-    width: auto;
-    object-fit: contain;
-}
+
+
+
 
 .footer-logo {
     width: 180px;
