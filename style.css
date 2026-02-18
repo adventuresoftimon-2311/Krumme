@@ -225,8 +225,8 @@ h2.section-title {
 /* HERO PLAY BUTTON */
 .hero-play-btn {
     position: absolute;
-    top: -84px;
-    /* Half of 168px – straddles the red line */
+    top: -144px;
+    /* -84px (center on border) + 60px up */
     left: 50%;
     transform: translateX(-50%);
     width: 168px;
