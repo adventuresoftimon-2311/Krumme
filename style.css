@@ -141,8 +141,9 @@ h2.section-title {
     color: #fff;
 }
 
-.cta-button.outline {
-    background-color: transparent;
+.cta-button.outline,
+.cta-button.outline.small {
+    background-color: transparent !important;
     border-color: #8a2c22;
     color: #8a2c22;
 }
