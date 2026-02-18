@@ -43,10 +43,34 @@
                 <a href="#booking" class="cta-button primary-highlight">JETZT FÜR KOSTENLOSES ERSTGESPRÄCH ANMELDEN!</a>
             </div>
         </div>
+        <!-- PLAY BUTTON -->
+        <button class="hero-play-btn" id="heroPlayBtn" aria-label="Video abspielen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+        </button>
         <div class="scroll-indicator">
             <span>↓</span>
         </div>
     </section>
+
+    <!-- VIDEO MODAL -->
+    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video">
+        <div class="video-modal-overlay" id="videoOverlay"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" id="videoClose" aria-label="Schließen">✕</button>
+            <video id="heroVideo" controls playsinline style="width:100%; border-radius:8px; display:block;">
+                <!-- Dein Video hier einfügen: -->
+                <!-- <source src="./assets/dein-video.mp4" type="video/mp4"> -->
+                <p style="color:#fff; text-align:center; padding:2rem;">Bitte eine Videodatei unter <code>assets/</code>
+                    ablegen und den &lt;source&gt;-Tag aktivieren.</p>
+            </video>
+            <div class="video-cta" id="videoCta">
+                <p>Bereit für dein erstes Kennenlerngespräch?</p>
+                <a href="#booking" class="cta-button" id="videoCtaBtn">🎯 Jetzt Termin buchen</a>
+            </div>
+        </div>
+    </div>
 
     <!-- INFO & SOCIAL STRIP -->
     <section class="info-strip">
@@ -313,6 +337,47 @@
     </footer>
 
     <script type="module" src="./main.js"></script>
+    <script>
+        // VIDEO MODAL LOGIC
+        const playBtn = document.getElementById('heroPlayBtn');
+        const modal = document.getElementById('videoModal');
+        const overlay = document.getElementById('videoOverlay');
+        const closeBtn = document.getElementById('videoClose');
+        const video = document.getElementById('heroVideo');
+        const cta = document.getElementById('videoCta');
+        const ctaBtn = document.getElementById('videoCtaBtn');
+        let ctaShown = false;
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            video.play().catch(() => { });
+            ctaShown = false;
+            cta.classList.remove('visible');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        playBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+
+        // Show CTA at 80% of video
+        video.addEventListener('timeupdate', () => {
+            if (!ctaShown && video.duration && video.currentTime / video.duration >= 0.8) {
+                ctaShown = true;
+                cta.classList.add('visible');
+            }
+        });
+
+        // Clicking CTA closes modal and scrolls to booking
+        ctaBtn.addEventListener('click', closeModal);
+    </script>
 </body>
 
 </html>

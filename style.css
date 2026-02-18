@@ -213,7 +213,141 @@ h2.section-title {
     }
 }
 
+/* HERO PLAY BUTTON */
+.hero-play-btn {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse-ring 2.5s infinite;
+}
+
+.hero-play-btn:hover {
+    background: #a63e2e;
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes pulse-ring {
+    0% {
+        box-shadow: 0 0 0 0 rgba(138, 44, 34, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(138, 44, 34, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(138, 44, 34, 0);
+    }
+}
+
+/* VIDEO MODAL */
+.video-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.video-modal-content {
+    position: relative;
+    z-index: 1;
+    width: min(860px, 92vw);
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8);
+    animation: modal-in 0.3s ease;
+}
+
+@keyframes modal-in {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.video-modal-close {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    color: #222;
+    font-weight: 700;
+}
+
+.video-modal-close:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+/* Video CTA – hidden until 80% */
+.video-cta {
+    text-align: center;
+    background: #1a1a1a;
+    border-top: 2px solid var(--color-primary);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 2rem;
+    transition: opacity 0.6s ease, max-height 0.6s ease, padding 0.6s ease;
+}
+
+.video-cta.visible {
+    opacity: 1;
+    max-height: 200px;
+    padding: 1.5rem 2rem;
+}
+
+.video-cta p {
+    color: #eaddcf;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
 /* INFO STRIP */
+
 .info-strip {
     background-color: #2c1e18;
     /* Dark brown strip */
