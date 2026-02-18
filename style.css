@@ -401,6 +401,31 @@ h2.section-title {
     margin-bottom: 1rem;
 }
 
+/* BOOKING BLOCK */
+.booking-block {
+    background-color: #2c1e18;
+    /* Dark brown to match footer/strip */
+    color: #eaddcf;
+    text-align: center;
+}
+
+.booking-block .section-title {
+    color: #eaddcf;
+    border-bottom-color: #eaddcf;
+}
+
+.booking-block .cta-button {
+    background: #eaddcf;
+    color: #2c1e18;
+    border-color: #eaddcf;
+}
+
+.booking-block .cta-button:hover {
+    background: #fff;
+    color: #2c1e18;
+    border-color: #fff;
+}
+
 /* FOOTER */
 /* FOOTER */
 footer {
