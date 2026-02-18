@@ -248,6 +248,11 @@ h2.section-title {
     animation: pulse-ring 2.5s infinite;
 }
 
+.hero-play-btn svg {
+    /* Push triangle slightly right for visual balance in the circle */
+    transform: translateX(4px);
+}
+
 .hero-play-btn:hover {
     background: #a63e2e;
     transform: translateX(-50%) scale(1.06);
@@ -940,6 +945,16 @@ footer {
         transform: none;
         width: 84px;
         height: 84px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-play-btn svg {
+        width: 32px;
+        height: 32px;
+        transform: translateX(3px);
+        /* Scale down and nudge right on mobile */
     }
 
     .main-title {
