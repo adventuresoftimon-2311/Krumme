@@ -149,8 +149,11 @@ h2.section-title {
 }
 
 .cta-button.outline:hover {
-    background-color: #8a2c22;
-    color: #fff;
+    background-color: transparent;
+    color: #8a2c22;
+    border-color: #8a2c22;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 /* ... existing scroll indicator ... */
