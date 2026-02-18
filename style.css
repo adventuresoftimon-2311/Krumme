@@ -360,15 +360,7 @@ h2.section-title {
     }
 }
 
-.cta-button.small {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-    cursor: pointer;
-    background-color: #8a2c22;
-    border: 2px solid #8a2c22;
-    color: #fff;
-}
+
 
 .cta-button.small:hover {
     background-color: #a63e2e;
