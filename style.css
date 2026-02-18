@@ -587,6 +587,41 @@ footer {
     letter-spacing: 1px;
 }
 
+.sticky-header .logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    height: 50px;
+    /* Fitting size for sticky header */
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* White CTA Button for Hero */
+.cta-button.white {
+    background-color: #fff;
+    color: #8a2c22;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background-color: #f4f1ea;
+    /* Light beige tint */
+    color: #8a2c22;
+}
+
 .sticky-header nav {
     display: flex;
     gap: 1.5rem;
