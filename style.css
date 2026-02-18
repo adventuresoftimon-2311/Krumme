@@ -225,12 +225,12 @@ h2.section-title {
 /* HERO PLAY BUTTON */
 .hero-play-btn {
     position: absolute;
-    top: -120px;
-    /* Half of 240px – straddles the red line */
+    top: -84px;
+    /* Half of 168px – straddles the red line */
     left: 50%;
     transform: translateX(-50%);
-    width: 240px;
-    height: 240px;
+    width: 168px;
+    height: 168px;
     border-radius: 50%;
     background: var(--color-primary);
     border: 4px solid rgba(255, 255, 255, 0.35);
