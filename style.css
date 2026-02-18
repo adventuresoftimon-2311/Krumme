@@ -548,10 +548,7 @@ footer {
     flex-shrink: 0;
 }
 
-.footer-col-links {
-    margin-left: auto;
-    /* Push LINKS to right side */
-}
+
 
 .footer-col h4 {
     color: #fff;
