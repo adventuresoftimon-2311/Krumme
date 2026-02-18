@@ -407,6 +407,12 @@ h2.section-title {
     border-top: none;
 }
 
+.studio-block .section-title {
+    display: table;
+    margin: 0 auto 3rem auto;
+    /* Center title on dark background */
+}
+
 .studio-content {
     background: rgba(244, 241, 234, 0.95);
     /* Beige overlay */
