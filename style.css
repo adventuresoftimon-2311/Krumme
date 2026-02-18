@@ -291,15 +291,17 @@ h2.section-title {
 
 .intro-text {
     max-width: 800px;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem auto;
+    /* Center container horizontally */
     font-size: 1.1rem;
     color: var(--color-text);
+    text-align: center;
+    /* Center text content */
 }
 
 .highlight {
     color: var(--color-text);
-    border-left: 2px solid var(--color-primary);
-    padding-left: 1rem;
+    /* Removed border and padding for centered look */
 }
 
 .grid-layout {
