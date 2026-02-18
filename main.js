@@ -59,9 +59,9 @@ const init = () => {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
             }
+            // User requested to keep it small when scrolling back up (avoid glitches)
+            // No else block to remove .scrolled
         });
     }
 };
