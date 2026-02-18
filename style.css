@@ -416,12 +416,6 @@ h2.section-title {
     /* Match border */
 }
 
-/* Fix visibility of Trust Items on dark background */
-.studio-block .trust-item span {
-    color: #fff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
-
 .studio-content {
     background: rgba(244, 241, 234, 0.95);
     /* Beige overlay */
