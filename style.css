@@ -931,10 +931,15 @@ footer {
 /* Mobile */
 @media (max-width: 768px) {
 
-    /* Play button: center sits on the brown bar */
+    /* Play button: half size, slightly above brown bar, right edge */
     .hero-play-btn {
-        top: 0;
-        /* center = 84px into the brown bar */
+        top: -50px;
+        /* slightly above the brown bar */
+        left: auto;
+        right: 16px;
+        transform: none;
+        width: 84px;
+        height: 84px;
     }
 
     .main-title {
