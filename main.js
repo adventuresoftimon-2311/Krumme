@@ -1,7 +1,7 @@
 const init = () => {
     console.log('Krumme Klänge Landing Page Loaded');
 
-    const revealElements = document.querySelectorAll('.card, .section-title, .studio-content, .info-strip');
+    const revealElements = document.querySelectorAll('.card, .section-title, .studio-content');
 
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
