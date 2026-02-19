@@ -1261,22 +1261,11 @@ footer {
     /* Controlled by JS */
     opacity: 1;
     /* Default visibility */
-    animation: slideUp 0.5s ease forwards;
-    /* Ensure end state persists */
+    /* animation: slideUp 0.5s ease forwards; - REMOVED for stability */
     flex-direction: column;
 }
 
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+/* @keyframes slideUp removed */
 
 .cookie-content h3 {
     font-family: var(--font-heading);
