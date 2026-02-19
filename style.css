@@ -1213,4 +1213,21 @@ footer {
         width: 100%;
         font-size: 1rem;
     }
+
+    /* Fix spacing and grid on mobile */
+    .container {
+        padding: 0 1.5rem;
+        /* Symmetric padding matching header */
+    }
+
+    .grid-layout {
+        grid-template-columns: 1fr;
+        /* Prevent overflow by forcing 1 column fitting width */
+        gap: 1.5rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+        /* Reduce padding slightly for mobile */
+    }
 }
