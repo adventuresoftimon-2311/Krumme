@@ -1095,8 +1095,10 @@ footer {
         /* To ensure it's "exactly" in the middle, we can use flex: 1 on neighbors or absolute positioning */
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scale(0.7);
         margin-top: -10px;
+        opacity: 0.3;
+        /* 30% opacity as requested */
         /* Counter-act the header's top padding if necessary */
     }
 
