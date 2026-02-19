@@ -54,26 +54,18 @@ const init = () => {
         }
     });
     // Sticky Header Scroll Effect
-    // Desktop: Trigger at Schlagzeugschule section + toggle
-    // Mobile: Trigger at 50px + stay (restore previous behavior)
+    // Reverted: Both mobile and desktop now toggle the 'scrolled' class based on the 'schule' section position.
     const header = document.querySelector('.sticky-header');
     const schuleSection = document.getElementById('schule');
 
-    if (header) {
+    if (header && schuleSection) {
         window.addEventListener('scroll', () => {
-            const isMobile = window.innerWidth <= 768;
-
-            if (isMobile) {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                }
-            } else if (schuleSection) {
-                const schuleTop = schuleSection.offsetTop;
-                if (window.scrollY >= schuleTop - 90) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
+            const schuleTop = schuleSection.offsetTop;
+            // Trigger when the section top reaches the bottom of the header
+            if (window.scrollY >= schuleTop - 90) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
         });
     }

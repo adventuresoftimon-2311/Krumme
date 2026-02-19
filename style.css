@@ -998,26 +998,36 @@ footer {
     .sticky-header {
         height: 100px;
         /* Smaller mobile height */
-        padding: 0.5rem 1rem 0 1rem;
+        padding: 0.8rem 1rem 0 1rem;
         /* Keep triangle on mobile but scaled */
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%) !important;
-        clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%) !important;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%) !important;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%) !important;
+        align-items: center;
+        /* Center items vertically */
     }
 
     .sticky-header.scrolled {
         height: 70px;
         /* Even smaller when scrolled */
-        padding: 0.5rem 1rem 0 1rem;
+        padding: 0 1rem;
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
     }
 
-    .sticky-header .logo {
-        font-size: 1.2rem;
+    .header-logo {
+        height: 65px;
+        /* Significantly smaller for mobile */
+        margin-top: 0;
+    }
+
+    .sticky-header.scrolled .header-logo {
+        height: 40px;
     }
 
     .sticky-header nav {
         gap: 0.8rem;
+        margin-top: 0;
+        /* Reset desktop margin */
     }
 
     .sticky-header nav a:not(.cta-nav) {
@@ -1027,7 +1037,7 @@ footer {
 
     .sticky-header .cta-nav {
         font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
+        padding: 0.5rem 0.8rem;
     }
 }
 
