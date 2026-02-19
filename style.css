@@ -1230,4 +1230,15 @@ footer {
         padding: 1.5rem;
         /* Reduce padding slightly for mobile */
     }
+
+    /* "White Box" specific adjustment for Tonstudio */
+    .studio-content {
+        margin-left: -0.75rem;
+        /* Pull half of the 1.5rem container padding */
+        margin-right: -0.75rem;
+        width: calc(100% + 1.5rem);
+        /* Extend width to compensate */
+        padding: 2rem 1.5rem;
+        /* Adjust internal padding */
+    }
 }
