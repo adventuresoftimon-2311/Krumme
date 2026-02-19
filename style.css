@@ -987,9 +987,10 @@ footer {
 /* MOBILE DROPDOWN */
 .mobile-dropdown {
     display: none;
-    position: absolute;
-    top: 100%;
-    /* Below header */
+    position: fixed;
+    /* Fixed to follow sticky header */
+    top: 110px;
+    /* Default mobile header height */
     left: 0;
     width: 100%;
     background: #f4f1ea;
@@ -997,7 +998,14 @@ footer {
     padding: 1rem 0;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     border-top: 1px solid rgba(0, 0, 0, 0.05);
-    z-index: 999;
+    z-index: 1002;
+    /* Ensure it's above everything including the header's clip area */
+    transition: top 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sticky-header.scrolled+.mobile-dropdown {
+    top: 70px;
+    /* Compact mobile header height */
 }
 
 .mobile-dropdown.active {
