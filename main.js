@@ -53,15 +53,18 @@ const init = () => {
             }
         }
     });
-    // Sticky Header Scroll Effect (Standard)
+    // Sticky Header Scroll Effect (Trigger at Schlagzeugschule section)
     const header = document.querySelector('.sticky-header');
-    if (header) {
+    const schuleSection = document.getElementById('schule');
+
+    if (header && schuleSection) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
+            const schuleTop = schuleSection.offsetTop;
+            // Trigger when the section top reaches the bottom of the header
+            if (window.scrollY >= schuleTop - 90) {
                 header.classList.add('scrolled');
             }
-            // User requested to keep it small when scrolling back up (avoid glitches)
-            // No else block to remove .scrolled
+            // Keeping previous logic: once .scrolled is added, it stays (user request)
         });
     }
 };
