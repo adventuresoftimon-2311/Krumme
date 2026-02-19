@@ -765,14 +765,14 @@ footer {
 .glitch::before {
     left: 2px;
     text-shadow: -1px 0 #8a2c22;
-    clip: rect(44px, 450px, 56px, 0);
+    clip: rect(44px, 9999px, 56px, 0);
     animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
 .glitch::after {
     left: -2px;
     text-shadow: -1px 0 #d97706;
-    clip: rect(44px, 450px, 56px, 0);
+    clip: rect(44px, 9999px, 56px, 0);
     animation: glitch-anim 2 5s infinite linear alternate-reverse;
 }
 
