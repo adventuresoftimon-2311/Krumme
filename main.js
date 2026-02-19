@@ -34,17 +34,17 @@ const init = () => {
     const consentKey = 'cookieConsent_v2';
     const consent = localStorage.getItem(consentKey);
 
-    console.log('Cookie Consent Status:', consent);
+    // console.log('Cookie Consent Status:', consent);
 
     if (!consent && cookieBanner) {
-        console.log('Showing Cookie Banner...');
+        // console.log('Showing Cookie Banner...');
         // Show banner after a short delay
         setTimeout(() => {
             cookieBanner.classList.add('visible');
-            console.log('Cookie Banner class "visible" added');
+            // console.log('Cookie Banner class "visible" added');
         }, 500);
     } else {
-        console.log('Cookie Banner not shown (consent exists or banner missing)');
+        // console.log('Cookie Banner not shown (consent exists or banner missing)');
     }
 
     const hideBanner = () => {
@@ -56,7 +56,7 @@ const init = () => {
     const saveConsent = (type) => {
         localStorage.setItem(consentKey, type);
         hideBanner();
-        console.log(`Cookie Consent Saved (v2): ${type}`);
+        // console.log(`Cookie Consent Saved (v2): ${type}`);
 
         if (type === 'all') {
             console.log('Loading third-party scripts...');
