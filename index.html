@@ -3,9 +3,82 @@
 
 <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KRUMME KLÄNGE - Schlagzeugschule & Tonstudio Bremen</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Schlagzeugschule Krumme Klänge & Tonstudio Bremen - Sven Krumme</title>
+    <meta name="description"
+        content="Lerne Schlagzeug in Bremen bei Krumme Klänge. Individueller Unterricht, Gruppenkurse & professionelles Tonstudio für Aufnahmen. Jetzt kostenloses Erstgespräch vereinbaren!">
+    <meta name="keywords"
+        content="Schlagzeugschule Bremen, Schlagzeugunterricht, Tonstudio Bremen, Musikproduktion, Sven Krumme, Schlagzeug lernen, Aufnahme, Recording, Bandcoaching, Live Recording">
+    <meta name="author" content="Sven Krumme">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.krumme-klaenge.de/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.krumme-klaenge.de/">
+    <meta property="og:title" content="Schlagzeugschule Krumme Klänge & Tonstudio Bremen">
+    <meta property="og:description"
+        content="Lerne Schlagzeug in Bremen bei Krumme Klänge. Individueller Unterricht, Gruppenkurse & professionelles Tonstudio für Aufnahmen.">
+    <meta property="og:image" content="https://www.krumme-klaenge.de/assets/hero_drums.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.krumme-klaenge.de/">
+    <meta property="twitter:title" content="Schlagzeugschule Krumme Klänge & Tonstudio Bremen">
+    <meta property="twitter:description"
+        content="Lerne Schlagzeug in Bremen bei Krumme Klänge. Individueller Unterricht, Gruppenkurse & professionelles Tonstudio für Aufnahmen.">
+    <meta property="twitter:image" content="https://www.krumme-klaenge.de/assets/hero_drums.jpg">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Krumme Klänge",
+      "image": "https://www.krumme-klaenge.de/assets/logo.png",
+      "telephone": "0421 83 56 400",
+      "email": "sven@krumme-klaenge.de",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kornstrasse 59",
+        "addressLocality": "Bremen",
+        "postalCode": "28201",
+        "addressCountry": "DE"
+      },
+      "url": "https://www.krumme-klaenge.de/",
+      "priceRange": "€€",
+      "description": "Professionelle Schlagzeugschule und Tonstudio in Bremen. Unterricht für Anfänger und Fortgeschrittene sowie Recording-Services für Bands und Musiker.",
+      "founder": {
+        "@type": "Person",
+        "name": "Sven Krumme"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:00",
+          "closes": "20:00"
+        }
+      ],
+      "department": [
+        {
+          "@type": "MusicSchool",
+          "name": "Schlagzeugschule Krumme Klänge",
+          "image": "https://www.krumme-klaenge.de/assets/sven_drumming.jpg",
+          "description": "Schlagzeugunterricht für alle Level in Einzel- und Gruppenkursen."
+        },
+        {
+          "@type": "RecordingStudio",
+          "name": "Tonstudio Krumme Klänge",
+          "image": "https://www.krumme-klaenge.de/assets/studio_bg.jpg",
+          "description": "Professionelles Recording, Mixing und Mastering für Bands und Solokünstler."
+        }
+      ]
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +93,8 @@
 
     <!-- STICKY HEADER -->
     <header class="sticky-header">
-        <a href="#" class="logo-link"><img src="./assets/logo.png" alt="Krumme Klänge" class="header-logo"></a>
+        <a href="#" class="logo-link"><img src="./assets/logo.png" alt="Krumme Klänge - Schlagzeugschule & Tonstudio"
+                class="header-logo"></a>
 
         <!-- Mobile Menu Toggle -->
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menü öffnen">
@@ -50,8 +124,8 @@
         <div class="hero-content">
             <h1 class="main-title glitch" data-text="KRUMME KLÄNGE">KRUMME KLÄNGE</h1>
             <div class="hero-buttons">
-                <a href="#schule" class="cta-button">SCHLAGZEUGSCHULE</a>
-                <a href="#studio" class="cta-button white">TONSTUDIO</a>
+                <a href="#schule" class="cta-button" aria-label="Zur Schlagzeugschule">SCHLAGZEUGSCHULE</a>
+                <a href="#studio" class="cta-button white" aria-label="Zum Tonstudio">TONSTUDIO</a>
             </div>
             <!-- Extra CTA -->
             <div style="margin-top: 2rem;">
@@ -65,7 +139,7 @@
 
     <!-- PLAY BUTTON – sits on the red border line -->
     <div class="play-btn-wrapper">
-        <button class="hero-play-btn" id="heroPlayBtn" aria-label="Video abspielen">
+        <button class="hero-play-btn" id="heroPlayBtn" aria-label="Video abspielen - Vorstellung Krumme Klänge">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="white">
                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
             </svg>
@@ -73,7 +147,7 @@
     </div>
 
     <!-- VIDEO MODAL -->
-    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video">
+    <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video Vorstellung">
         <div class="video-modal-overlay" id="videoOverlay"></div>
         <div class="video-modal-content">
             <button class="video-modal-close" id="videoClose" aria-label="Schließen">✕</button>
@@ -97,7 +171,8 @@
                 <p>0421 83 56 400 | 0179 90 74 626</p>
             </div>
             <div class="social-icons">
-                <a href="https://www.instagram.com/schlagzeugschulekrumme/" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/schlagzeugschulekrumme/" target="_blank"
+                    aria-label="Besuche uns auf Instagram">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -105,7 +180,8 @@
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
                 </a>
-                <a href="https://www.youtube.com/channel/UCsuszLRZlbkcINhYmumzwUw" target="_blank" aria-label="YouTube">
+                <a href="https://www.youtube.com/channel/UCsuszLRZlbkcINhYmumzwUw" target="_blank"
+                    aria-label="Besuche unseren YouTube Kanal">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path
@@ -114,7 +190,8 @@
                         <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
                     </svg>
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=100050026843499" target="_blank" aria-label="Facebook">
+                <a href="https://www.facebook.com/profile.php?id=100050026843499" target="_blank"
+                    aria-label="Besuche uns auf Facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
@@ -174,7 +251,7 @@
                     <p>Am coolsten ist es natürlich, wenn wir als Gruppe quartalsweise alle Kurse nacheinander und
                         miteinander erleben! :-)</p>
 
-                    <button class="cta-button outline small toggle-btn">Mehr erfahren</button>
+                    <button class="cta-button outline small toggle-btn" aria-expanded="false">Mehr erfahren</button>
                     <div class="toggle-details">
                         <h4>BUM-BUM-CRASH-KURS</h4>
                         <p>Sehr viel Basis-Wissen! Einfache 4tel Beats – Grundlage für fast alles! Binäre Notenwerte und
@@ -354,6 +431,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <h3>Cookie-Einstellungen</h3>
+            <p>Wir nutzen Cookies, um dir die bestmögliche Erfahrung auf unserer Website zu bieten. Einige sind
+                notwendig, während andere uns helfen, unser Angebot zu verbessern.</p>
+            <div class="cookie-buttons">
+                <button id="acceptAllCookies" class="cta-button small">Alle akzeptieren</button>
+                <button id="acceptNecessaryCookies" class="cta-button outline small">Nur Notwendige</button>
+                <button id="rejectCookies" class="text-link-button">Ablehnen</button>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="./main.js"></script>
     <script>

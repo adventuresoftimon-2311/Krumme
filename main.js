@@ -24,6 +24,52 @@ const init = () => {
         el.style.transition = 'all 0.6s ease-out';
     });
 
+    // --- COOKIE BANNER LOGIC ---
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptAllBtn = document.getElementById('acceptAllCookies');
+    const acceptNecessaryBtn = document.getElementById('acceptNecessaryCookies');
+    const rejectBtn = document.getElementById('rejectCookies');
+
+    // Check if user has already made a choice
+    const consent = localStorage.getItem('cookieConsent');
+
+    if (!consent && cookieBanner) { // Added check for cookieBanner existence
+        // Show banner after a short delay
+        setTimeout(() => {
+            cookieBanner.style.display = 'block';
+        }, 1000);
+    }
+
+    const hideBanner = () => {
+        if (cookieBanner) { // Added check for cookieBanner existence
+            cookieBanner.style.display = 'none';
+        }
+    };
+
+    const saveConsent = (type) => {
+        localStorage.setItem('cookieConsent', type);
+        hideBanner();
+        console.log(`Cookie Consent Saved: ${type}`);
+
+        // Here you would typically initialize analytics/pixels if type === 'all'
+        if (type === 'all') {
+            // Function to load third-party scripts
+            console.log('Loading third-party scripts...');
+        }
+    };
+
+    if (acceptAllBtn) {
+        acceptAllBtn.addEventListener('click', () => saveConsent('all'));
+    }
+
+    if (acceptNecessaryBtn) {
+        acceptNecessaryBtn.addEventListener('click', () => saveConsent('necessary'));
+    }
+
+    if (rejectBtn) {
+        rejectBtn.addEventListener('click', () => saveConsent('none'));
+    }
+
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
 
