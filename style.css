@@ -296,8 +296,10 @@ h2.section-title {
 .video-modal-content {
     position: relative;
     z-index: 1;
-    width: min(860px, 92vw);
-    max-height: 90vh;
+    width: min(720px, 88vw);
+    /* Slightly smaller width */
+    max-height: 85vh;
+    /* Slightly more margin from screen edges */
     background: #111;
     border-radius: 12px;
     overflow: hidden;
@@ -309,11 +311,10 @@ h2.section-title {
 
 #heroVideo {
     width: 100%;
-    height: auto;
-    max-height: 100%;
+    /* Let height be determined by aspect ratio, but cap it so CTA fits */
+    max-height: 60vh;
     object-fit: contain;
-    flex-grow: 1;
-    flex-shrink: 1;
+    background: #000;
     display: block;
 }
 
@@ -1078,6 +1079,15 @@ footer {
         flex-direction: column;
         gap: 2rem;
         align-items: center;
+    }
+
+    .video-cta {
+        padding: 1rem !important;
+    }
+
+    .video-cta p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
     }
 
     .cta-button.primary-highlight {
