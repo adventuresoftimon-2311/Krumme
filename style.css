@@ -1312,9 +1312,20 @@ footer {
 
 @media (max-width: 768px) {
     .cookie-banner {
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
+        /* Reset positioning for modal behavior */
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        transform: translate(-50%, -50%);
+
+        width: 90%;
+        max-width: 400px;
+
+        /* Modal styling: High contrast shadow serves as overlay */
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5), 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 11000;
+        /* Extremely high to cover everything */
     }
 
     .cookie-buttons {
