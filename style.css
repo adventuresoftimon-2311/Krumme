@@ -1241,23 +1241,29 @@ footer {
         padding: 2rem 1.5rem;
         /* Adjust internal padding */
     }
-}/* COOKIE BANNER */
+}
+
+/* COOKIE BANNER STYLE */
 .cookie-banner {
     position: fixed;
     bottom: 20px;
     left: 20px;
-    right: 20px;
+    width: calc(100% - 40px);
     max-width: 500px;
     background: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     padding: 1.5rem;
-    z-index: 2000;
-    border-radius: var(--radius-card);
-    font-family: var(--font-body);
+    z-index: 9999;
+    /* Max Z-Index */
+    border-radius: 8px;
     display: none;
     /* Controlled by JS */
-    animation: slideUp 0.5s ease;
+    opacity: 1;
+    /* Default visibility */
+    animation: slideUp 0.5s ease forwards;
+    /* Ensure end state persists */
+    flex-direction: column;
 }
 
 @keyframes slideUp {

@@ -36,7 +36,7 @@ const init = () => {
     if (!consent && cookieBanner) { // Added check for cookieBanner existence
         // Show banner after a short delay
         setTimeout(() => {
-            cookieBanner.style.display = 'block';
+            cookieBanner.style.display = 'flex';
         }, 1000);
     }
 
