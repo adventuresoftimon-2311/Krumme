@@ -63,8 +63,9 @@ const init = () => {
             // Trigger when the section top reaches the bottom of the header
             if (window.scrollY >= schuleTop - 90) {
                 header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
-            // Keeping previous logic: once .scrolled is added, it stays (user request)
         });
     }
 };
