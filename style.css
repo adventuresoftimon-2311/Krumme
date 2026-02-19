@@ -996,27 +996,27 @@ footer {
 
     /* Mobile Header */
     .sticky-header {
-        height: 100px;
-        /* Smaller mobile height */
-        padding: 0.6rem 1rem 0 1rem;
+        height: 110px;
+        /* Slightly taller to accommodate larger logo */
+        padding: 0.4rem 1rem 0 1rem;
         /* Keep triangle on mobile but scaled */
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%) !important;
-        clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%) !important;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%) !important;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%) !important;
         align-items: center;
         /* Center items vertically */
     }
 
     .sticky-header.scrolled {
         height: 70px;
-        /* Even smaller when scrolled */
+        /* Keep compact when scrolled */
         padding: 0 1rem;
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
     }
 
     .header-logo {
-        height: 78px;
-        /* Slightly larger, but safe from clipping */
+        height: 90px;
+        /* ~15% larger */
         margin-top: 0;
     }
 
