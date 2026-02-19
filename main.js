@@ -53,6 +53,34 @@ const init = () => {
             }
         }
     });
+
+    // Mobile Menu Toggle Logic
+    const menuToggle = document.getElementById('mobileMenuToggle');
+    const dropdown = document.getElementById('mobileDropdown');
+
+    if (menuToggle && dropdown) {
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuToggle.classList.toggle('active');
+            dropdown.classList.toggle('active');
+        });
+
+        // Close menu when clicking links
+        dropdown.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                dropdown.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                dropdown.classList.remove('active');
+            }
+        });
+    }
     // Sticky Header Scroll Effect
     // Reverted: Both mobile and desktop now toggle the 'scrolled' class based on the 'schule' section position.
     const header = document.querySelector('.sticky-header');
