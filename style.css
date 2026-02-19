@@ -1254,87 +1254,80 @@ footer {
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     padding: 1.5rem;
-    z-index: 9999;
+    z-index: 999999;
     /* Max Z-Index */
     border-radius: 8px;
-    display: none;
-    /* Controlled by JS */
-    opacity: 1;
-    /* Default visibility */
-    /* animation: slideUp 0.5s ease forwards; - REMOVED for stability */
-    flex-direction: column;
-}
-
-/* @keyframes slideUp removed */
-
-.cookie-content h3 {
-    font-family: var(--font-heading);
-    color: var(--color-primary);
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.cookie-content p {
-    font-size: 0.9rem;
-    color: var(--color-text);
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-}
-
-.cookie-buttons {
     display: flex;
-    gap: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+
+    /* Visibility State - Hidden by default */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.cookie-buttons .cta-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-}
-
-.cookie-buttons .text-link-button {
-    background: none;
-    border: none;
-    padding: 0;
-    color: var(--color-text-muted);
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-decoration: underline;
-    transition: color 0.3s;
-}
-
-.cookie-buttons .text-link-button:hover {
-    color: var(--color-primary);
+.cookie-banner.visible {
+    /* Visibility State - Shown */
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 @media (max-width: 768px) {
     .cookie-banner {
-        /* Reset positioning for modal behavior */
-        left: 50%;
+        /* Reset for Modal Centering */
+        position: fixed;
         top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* Classic robust centering */
         bottom: auto;
         right: auto;
-        transform: translate(-50%, -50%);
 
-        width: 90%;
-        max-width: 400px;
+        width: 90vw;
+        max-width: 350px;
+        /* Slightly narrower for better mobile fit */
+        margin: 0;
+        /* Clear margins */
 
-        /* Modal styling: High contrast shadow serves as overlay */
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5), 0 10px 25px rgba(0, 0, 0, 0.2);
-        z-index: 11000;
-        /* Extremely high to cover everything */
+        /* Modal Box Styling */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        /* Strong shadow */
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* Dedicated Overlay Pseudo-element */
+    .cookie-banner::before {
+        content: '';
+        position: fixed;
+        top: -500vh;
+        /* Extend far beyond container to cover screen */
+        left: -500vw;
+        width: 1000vw;
+        height: 1000vh;
+        background: rgba(0, 0, 0, 0.7);
+        /* Darker overlay */
+        z-index: -1;
+        backdrop-filter: blur(4px);
     }
 
     .cookie-buttons {
         flex-direction: column;
         align-items: stretch;
+        gap: 0.8rem;
     }
 
     .cookie-buttons .text-link-button {
         text-align: center;
         padding: 0.5rem;
+    }
+
+    /* Ensure close/accept buttons are easy to tap */
+    .cookie-buttons .cta-button {
+        min-height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

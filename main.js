@@ -30,30 +30,35 @@ const init = () => {
     const acceptNecessaryBtn = document.getElementById('acceptNecessaryCookies');
     const rejectBtn = document.getElementById('rejectCookies');
 
-    // Check if user has already made a choice
-    const consent = localStorage.getItem('cookieConsent');
+    // Use a new key to force re-appearance for all users (v2)
+    const consentKey = 'cookieConsent_v2';
+    const consent = localStorage.getItem(consentKey);
 
-    if (!consent && cookieBanner) { // Added check for cookieBanner existence
+    console.log('Cookie Consent Status:', consent);
+
+    if (!consent && cookieBanner) {
+        console.log('Showing Cookie Banner...');
         // Show banner after a short delay
         setTimeout(() => {
-            cookieBanner.style.display = 'flex';
-        }, 1000);
+            cookieBanner.classList.add('visible');
+            console.log('Cookie Banner class "visible" added');
+        }, 500);
+    } else {
+        console.log('Cookie Banner not shown (consent exists or banner missing)');
     }
 
     const hideBanner = () => {
-        if (cookieBanner) { // Added check for cookieBanner existence
-            cookieBanner.style.display = 'none';
+        if (cookieBanner) {
+            cookieBanner.classList.remove('visible');
         }
     };
 
     const saveConsent = (type) => {
-        localStorage.setItem('cookieConsent', type);
+        localStorage.setItem(consentKey, type);
         hideBanner();
-        console.log(`Cookie Consent Saved: ${type}`);
+        console.log(`Cookie Consent Saved (v2): ${type}`);
 
-        // Here you would typically initialize analytics/pixels if type === 'all'
         if (type === 'all') {
-            // Function to load third-party scripts
             console.log('Loading third-party scripts...');
         }
     };
